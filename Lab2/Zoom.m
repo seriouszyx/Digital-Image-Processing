@@ -1,0 +1,13 @@
+clc;
+close all;
+clear all;
+I = imread('lenagray.jpg');
+figure,subplot(1,5,1),imshow(I),title('实验人：赵奕翔'),xlabel('原图');
+I1 = imresize(I,1.5,'nearest');
+subplot(1,5,2),imshow(I1),title('实验人：赵奕翔'),xlabel('1.5倍');
+I2 = imresize(I,0.7,'nearest');
+subplot(1,5,3),imshow(I2),title('实验人：赵奕翔'),xlabel('0.7倍');
+I3 = imresize(I,[600,700],'nearest');
+subplot(1,5,4),imshow(I3),title('实验人：赵奕翔'),xlabel('600*700');
+I4 = imresize(I,[300,400],'nearest');
+subplot(1,5,5),imshow(I4),title('实验人：赵奕翔'),xlabel('300*400');
