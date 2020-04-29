@@ -1,0 +1,11 @@
+clc;close all;clear all;
+img=imread('cameraman.tif');
+figure,subplot(2,3,1),imshow(img),title('实验人：赵奕翔'),xlabel('(a)原图');
+img_noise=double(imnoise(img,'salt & pepper',0.06));
+subplot(2,3,2),imshow(img_noise,[]),title('实验人：赵奕翔'),xlabel('(b)椒盐噪声污染图像');
+img_mean=imfilter(img_noise,fspecial('average',5));
+subplot(2,3,3),imshow(img_mean,[]),title('实验人：赵奕翔'),xlabel('(c)用算数均值滤波器');
+img_median=medfilt2(img_noise);
+subplot(2,3,4),imshow(img_median,[]),title('实验人：赵奕翔'),xlabel('(d)用中值滤波器');
+img_median2=medfilt2(img_median);
+subplot(2,3,5),imshow(img_median2,[]),title('实验人：赵奕翔'),xlabel('(e)用中值滤波器后再次中值滤波');
